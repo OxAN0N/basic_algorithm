@@ -7,14 +7,16 @@ queue <int> q;
 
 void bfs(vector <vector <int>> &gph, vector <bool> &visited, int v){
 	q.push(v);
+	visited[v]=1;
 	int v_var;
 	while(!q.empty()){
 		v_var=q.front();
 		cout<<v_var<<' ';
-		visited[v_var]=1;
 		for(int i=0;i<gph[v_var].size();i++){
 			if(!visited[gph[v_var][i]]){
 				q.push(gph[v_var][i]);
+				visited[gph[v_var][i]]=1;
+	
 			}
 
 		}
